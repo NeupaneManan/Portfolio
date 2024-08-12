@@ -1,0 +1,345 @@
+/* Base Styles */
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 0;
+                    padding: 0 30px;
+                    background-color: rgb(74, 74, 136);
+                    color: #333;
+
+                    h4{
+                        color: white;
+                        text-align: center;
+                    }
+                }
+        
+                header {
+                    background-color: #2c3e50;
+                    color: #ecf0f1;
+                    padding: 20px 0;
+                    text-align: center;
+                }
+        
+                header h1 {
+                    font-size: 36px;
+                    margin: 0;
+                }
+        
+                nav {
+                    background-color: #34495e;
+                    padding: 10px;
+                    text-align: center;
+                    position: sticky;
+                    top: 0%;
+                    border-radius: 5px;
+                }
+        
+                nav a {
+                    color: #ecf0f1;
+                    margin: 0 15px;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+        
+                nav a:hover {
+                    text-decoration: underline;
+                }
+        
+                .hamburger {
+                    display: none;
+                    cursor: pointer;
+                    padding: 10px;
+                }
+        
+                .hamburger div {
+                    width: 25px;
+                    height: 3px;
+                    background-color: #ecf0f1;
+                    margin: 5px 0;
+                }
+        
+                .nav-links {
+                    display: flex;
+                    justify-content: center;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                }
+        
+                .nav-links a {
+                    display: block;
+                    padding: 10px;
+                }
+        
+                @media screen and (max-width: 768px) {
+                    nav {
+                        position: relative;
+                    }
+        
+                    .hamburger {
+                        display: block;
+                        position: absolute;
+                        right: 10px;
+                        top: 10px;
+                    }
+        
+                    .nav-links {
+                        flex-direction: column;
+                        display: none;
+                    }
+        
+                    .nav-links.active {
+                        display: flex;
+                    }
+        
+                    .nav-links a {
+                        text-align: center;
+                        padding: 15px;
+                    }
+                }
+
+#about {
+    h2{
+        text-align: center;
+    }
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.two-column {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.two-column .container {
+    width: 45%;
+    margin-bottom: 20px;
+}
+
+.photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: auto;
+    display: block;
+}
+
+h2 {
+    font-size: 28px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.typewriter h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #333;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #333;
+    }
+}
+
+.skills {
+    margin-top: 20px;
+}
+
+.skill-bar {
+    margin-bottom: 15px;
+    background-color: #ecf0f1;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.skill-bar span {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    background-color: #2ecc71;
+    text-align: right;
+    padding-right: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 0;
+    transition: width 2s ease-in-out;
+}
+
+.skill-bar span[data-skill="html"] {
+    width: 80%;
+}
+
+.skill-bar span[data-skill="css"] {
+    width: 70%;
+}
+
+.skill-bar span[data-skill="js"] {
+    width: 60%;
+}
+
+.skill-bar span[data-skill="laravel"] {
+    width: 40%;
+}
+
+.skill-bar span[data-skill="canva"]{
+    width: 85%;
+}
+
+.project-item,
+.experience-item,
+.education-item {
+    margin-bottom: 10px;
+}
+
+.project-item h3,
+.experience-item h3,
+.education-item h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: #2980b9;
+}
+
+.project-item p,
+.experience-item p,
+.education-item p {
+    margin: 0;
+}
+
+.connect{
+    text-align: center;
+}
+
+.connect .social-medias{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    margin: auto;
+    margin-bottom: 10px;
+
+ div{
+    height: 50px;
+    width: 50px;
+ }
+ a{
+    height: 100px;
+    width: 100px;
+    color: rgb(93, 93, 175);
+    text-decoration: none;
+ }
+ a:hover{
+    cursor: pointer;
+ }
+}
+
+.contact form {
+    display: block;
+}
+
+.contact label {
+    font-weight: 700;
+}
+
+.contact input,
+.contact textarea {
+    margin-bottom: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact button {
+    padding: 10px;
+    width: 100px;
+    border: none;
+    background-color: #2980b9;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact button:hover {
+    background-color: #3498db;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    .two-column {
+        flex-direction: column;
+    }
+
+    .two-column .container {
+        width: 100%;
+    }
+
+    .photo {
+        width: 200px;
+        height: 200px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav a {
+        font-size: 18px;
+    }
+
+    .photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .skill-bar span {
+        font-size: 14px;
+    }
+}
