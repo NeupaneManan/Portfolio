@@ -1,25 +1,30 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Collect form data
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $message = htmlspecialchars($_POST['message']);
+    $name = filter_var(trim($_POST['name']), FILTER_SANITIZE_STRING);
+    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
+    $message = filter_var(trim($_POST['message']), FILTER_SANITIZE_STRING);
 
-    // Set the recipient email address
-    $to = "austinneupane@gmail.com"; 
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Invalid email address. Please enter a valid email.";
+        exit;
+    }
 
-    // Set the email subject
+    if (empty($name) || empty($email) || empty($message)) {
+        echo "All fields are required. Please fill out the form completely.";
+        exit;
+    }
+
+    $to = "austinneupane@gmail.com"; // Replace with your email address
+
     $subject = "New Contact Form Submission from $name";
 
-    // Build the email content
     $email_content = "Name: $name\n";
     $email_content .= "Email: $email\n\n";
     $email_content .= "Message:\n$message\n";
 
-    // Set the email headers
-    $headers = "From: $email";
+    $headers = "From: $email\r\n";
+    $headers .= "Reply-To: $email\r\n";
 
-    // Send the email
     if (mail($to, $subject, $email_content, $headers)) {
         echo "Thank you! Your message has been sent.";
     } else {
