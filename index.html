@@ -131,17 +131,18 @@
     </div>
     <div class="container contact" id="contact">
         <h2>Contact Me</h2>
-        <form>
+        <form action="email.php" method="post">
             <label for="name">Name:</label>
-            <input type="text" placeholder="Your Name" required>
+            <input type="text" placeholder="Your Name" name="name" required>
             <br>
 
             <label for="email">Email:</label>
-            <input type="email" placeholder="Your Email" required>
+            <input type="email" placeholder="Your Email" name="email" required>
             <br>
             <label for="Message">Message:</label>
             <br>
-            <textarea placeholder="Please Type Your Message here!!" rows="5" row="20" cols="250" required></textarea>
+            <textarea placeholder="Please Type Your Message here!!" rows="5" row="20" cols="250" name="Message"
+                required></textarea>
             <br>
             <button type="submit">Send</button>
         </form>
